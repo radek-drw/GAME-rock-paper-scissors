@@ -18,7 +18,7 @@
 
         h1 {
             text-align: center;
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
         h3 {
@@ -34,7 +34,7 @@
             display: inline-block;
             width: 48%;
             overflow: hidden;
-            margin: 40px auto 0;
+            margin: 10px auto 0;
             text-align: center;
         }
 
@@ -52,7 +52,7 @@
         }
 
         h2 {
-            font-size: 40px;
+            font-size: 25px;
         }
 
         .select {
@@ -91,8 +91,19 @@
             font-weight: bold;
         }
 
-        .yellow {
-            box-shadow: 0 0 7px 5px yellow;
+        @media (min-width: 300px) {
+            .select img {
+                width: 110px;
+                margin: 5px;
+            }
+
+            .panel-left p span {
+                display: block
+            }
+
+            span[data-summary="who-win"] {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
@@ -115,14 +126,14 @@
     <button class="start">Let's play!</button>
 
     <div class="panel-left">
-        <h3>Wyniki gry</h3>
+        <h3>Wyniki gry:</h3>
         <p>Twój wybór: <span data-summary="your-choice"></span></p>
         <p>Wybór komputera: <span data-summary="ai-choice"></span></p>
         <h2>Zwycięzca gry: <span data-summary="who-win"></span></h2>
     </div>
 
     <div class="panel-right">
-        <h3>Aktualne wyniki</h3>
+        <h3>Aktualne wyniki:</h3>
         <p class="numbers">liczba gier: <span>0</span></p>
         <p class="wins">wygranych: <span>0</span></p>
         <p class="losses">przegranych: <span>0</span></p>
