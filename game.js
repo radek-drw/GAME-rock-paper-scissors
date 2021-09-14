@@ -64,7 +64,7 @@ btn.addEventListener('click', function () {
       document.querySelector('[data-summary="who-win"]').style.color = 'red';
       document.querySelector('p.losses span').textContent = ++gameSummary.losses;
    }
-   // Ending game
+   // End of game
    function endGame(player, ai) {
       document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = '';
       game.playerHand = '';
