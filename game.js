@@ -11,6 +11,7 @@ const game = {
 
 // Player hand selection
 const hands = [...document.querySelectorAll('div.select img')];
+
 hands.forEach(hand => hand.addEventListener('click', function () {
    game.playerHand = this.dataset.option;
    hands.forEach(hand => hand.style.boxShadow = '');
@@ -19,6 +20,7 @@ hands.forEach(hand => hand.addEventListener('click', function () {
 
 // LET'S PLAY button
 const btn = document.querySelector('.start');
+
 btn.addEventListener('click', function () {
 
    // Checking if hand was slected by the player
@@ -32,7 +34,7 @@ btn.addEventListener('click', function () {
    }
    game.aiHand = aiChoice();
 
-   // Wynik gry
+   // Game result
    function checkResult(player, ai) {
       if (player === ai) {
          return 'draw';
@@ -64,7 +66,7 @@ btn.addEventListener('click', function () {
       document.querySelector('[data-summary="who-win"]').style.color = 'red';
       document.querySelector('p.losses span').textContent = ++gameSummary.losses;
    }
-   // End of game
+   // Ending game
    function endGame(player, ai) {
       document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = '';
       game.playerHand = '';
