@@ -23,7 +23,7 @@ const btn = document.querySelector('.start');
 
 btn.addEventListener('click', function () {
 
-   // Checking if hand was slected by the player
+   // Check if hand was slected by the player
    if (!game.playerHand) {
       return alert('Please select a hand!');
    }
@@ -46,7 +46,7 @@ btn.addEventListener('click', function () {
    };
    const gameResult = checkResult(game.playerHand, game.aiHand);
 
-   // PUBLISHING RESULTS
+   // PUBLISH RESULTS
    // (player & ai choice)
    document.querySelector('[data-summary="your-choice"]').textContent = game.playerHand;
    document.querySelector('[data-summary="ai-choice"]').textContent = game.aiHand;
@@ -66,7 +66,7 @@ btn.addEventListener('click', function () {
       document.querySelector('[data-summary="who-win"]').style.color = 'red';
       document.querySelector('p.losses span').textContent = ++gameSummary.losses;
    }
-   // Ending game
+   // End game
    function endGame(player, ai) {
       document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = '';
       game.playerHand = '';
